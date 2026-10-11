@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background        : 40 20% 98%;
+    --foreground        : 220 50% 10%;
+    --card              : 0 0% 100%;
+    --card-foreground   : 220 50% 10%;
+    --primary           : 220 50% 15%;
+    --primary-foreground: 40 20% 98%;
+    --secondary         : 180 40% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted             : 40 10% 90%;
+    --muted-foreground  : 220 20% 40%;
+    --accent            : 40 60% 50%;
+    --accent-foreground : 0 0% 100%;
+    --destructive       : 0 84% 60%;
+    --destructive-foreground: 40 20% 98%;
+    --border            : 40 10% 85%;
+    --input             : 40 10% 85%;
+    --ring              : 220 50% 15%;
+    --radius            : 0.75rem;
+    --popover           : 0 0% 100%;
+    --popover-foreground: 220 50% 10%;
+  }
+  .dark {
+    --background        : 220 50% 8%;
+    --foreground        : 40 20% 98%;
+    --card              : 220 50% 11%;
+    --card-foreground   : 40 20% 98%;
+    --primary           : 40 60% 50%;
+    --primary-foreground: 220 50% 10%;
+    --secondary         : 180 40% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted             : 220 30% 18%;
+    --muted-foreground  : 40 10% 65%;
+    --accent            : 40 60% 50%;
+    --accent-foreground : 220 50% 10%;
+    --destructive       : 0 63% 31%;
+    --destructive-foreground: 40 20% 98%;
+    --border            : 220 30% 18%;
+    --input             : 220 30% 18%;
+    --ring              : 40 60% 50%;
+    --popover           : 220 50% 11%;
+    --popover-foreground: 40 20% 98%;
+  }
+}
+
+@layer base {
+  * { border-color: hsl(var(--border)); box-sizing: border-box; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading tracking-tight; }
+}
+
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both; }
